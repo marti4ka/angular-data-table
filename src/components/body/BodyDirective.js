@@ -61,7 +61,7 @@ export function BodyDirective($timeout){
         </dt-scroller>
         <div ng-if="body.rows && !body.rows.length" 
              class="empty-row" 
-             ng-bind="::body.options.emptyMessage">
+             ng-bind-html="::body.options.emptyMessage">
        </div>
        <div ng-if="body.rows === undefined" 
              class="loading-row"
