@@ -73,8 +73,13 @@ export function DataTableDirective($window, $timeout, $parse){
             ctrl.options.columns = columns;
           }
 
-          ctrl.transposeColumnDefaults();
-          ctrl.options.internal.scrollBarWidth = ScrollbarWidth();
+          ctrl.transposeColumnDefaults();          
+          if (ctrl.options.scrollbarV){
+            ctrl.options.internal.scrollBarWidth = ScrollbarWidth();
+          }
+          else{
+            ctrl.options.internal.scrollBarWidth = 0;
+          }
 
           /**
            * Invoked on init of control or when the window is resized;

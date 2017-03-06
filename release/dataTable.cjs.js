@@ -2306,7 +2306,11 @@ function DataTableDirective($window, $timeout, $parse) {
           }
 
           ctrl.transposeColumnDefaults();
-          ctrl.options.internal.scrollBarWidth = ScrollbarWidth();
+          if (ctrl.options.scrollbarV) {
+            ctrl.options.internal.scrollBarWidth = ScrollbarWidth();
+          } else {
+            ctrl.options.internal.scrollBarWidth = 0;
+          }
 
           function resize() {
             var rect = $elm[0].getBoundingClientRect();
